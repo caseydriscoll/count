@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby 
 
-1..100.times do |n|
-  puts n if n.even?
+bot = 1
+top = 20000
+
+factor = 17
+
+bot..top.times do |n|
+  puts n if n % factor == 0
 end
