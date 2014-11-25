@@ -1,10 +1,22 @@
-#!/usr/bin/env ruby 
+#! /usr/bin/env ruby 
 
 bot = 1
-top = 20000
+top = 100000
 
-factor = 17
+top.times do |n|
+	next if n < 5 
 
-bot..top.times do |n|
-  puts n if n % factor == 0
+	hasFactor = false 
+
+	# For each tested variable, test to see if it has any other factors
+	for x in 2..(n-1) 
+		if n % x == 0 then
+			hasFactor = true
+		end
+		break if hasFactor
+	end
+
+	next if hasFactor
+
+  puts n 
 end
